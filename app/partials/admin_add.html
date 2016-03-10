@@ -1,0 +1,78 @@
+
+
+<h3>
+	Add New Listing
+</h3>
+
+<article class="listing-frm">
+	<form name="add-listing" ng-submit="ctrl.addListing()">
+
+		<div>
+			<label>Company Name</label>
+			<input type="text" name="name" ng-model="ctrl.name" required>
+		</div>
+		<div>
+			<label>Website Url  http://</label>
+			<input type="text" name="url" ng-model="ctrl.url" required>
+		</div>
+		<div>
+			<label>Email Address</label>
+			<input type="text" name="email" ng-model="ctrl.email" required>
+		</div>
+		<div>
+			<label>Phone Number  (optional)</label>
+			<input type="text" name="phone" ng-model="ctrl.phone">
+		</div>
+		<div>
+			<label>Country</label>
+			<select ng-options="option.value as option.label for option in ctrl.countries" ng-model="ctrl.country" name="country" required>
+			</select>
+		</div>
+<!-- 		<div>
+			<label>State</label>
+			<select ng-options="option.value as option.label for option in ctrl.states" ng-model="ctrl.state" name="state" required>
+			</select>
+		</div> -->
+		<div>
+			<label>City</label>
+			<select ng-options="option.value as option.label for option in ctrl.cities" ng-model="ctrl.city" name="city" required>
+			</select>
+		</div>
+		<div>
+			<label>Address (for Google Maps)</label>
+			<input type="text" name="address" ng-model="ctrl.address" required>
+		</div>
+<!-- 		<div>
+			<label>Category1</label>
+			<select ng-options="option.value as option.label for option in ctrl.categories1" ng-model="ctrl.category1" name="category1">
+			</select>
+		</div> -->
+		<div>
+			<label>Category</label>
+			<select ng-options="option.value as option.label for option in ctrl.categories" ng-model="ctrl.category" name="category">
+			</select>
+		</div>
+<!-- 		<div>
+		  <button type="file" ngf-select="uploadFiles($file, $invalidFiles)"
+          	accept="image/*" ngf-max-height="1000" ngf-max-size="1MB">
+      		Select File</button>
+  			<br><br>
+  			File:
+		  	<div style="font:smaller">{{f.name}} {{errFile.name}} {{errFile.$error}} {{errFile.$errorParam}}
+		     	 <span class="progress" ng-show="f.progress >= 0">
+		       	   	<div style="width:{{f.progress}}%"  
+		            	ng-bind="f.progress + '%'"></div>
+		      	</span>
+  			</div>     
+  			{{errorMsg}}
+		</div> -->
+		<div>
+			<label>Description</label>
+			<textarea type="text" name="name" ng-model="ctrl.description" required></textarea>
+		</div>
+		<div>
+			<button type="submit">Submit New Listing</button>
+			<button type="button" ui-sref="dashboard">Cancel</button>
+		</div>
+	</form>
+</article>

@@ -1,0 +1,103 @@
+
+
+<h3>
+	Edit Existing Listing
+</h3>
+
+<article class="listing-frm">
+	<form name="edit-listing" ng-submit="ctrl.editListing()">
+
+		<div>
+			<label>Listing ID</label>
+			<input type="text" name="id" ng-model="ctrl.listing.id">
+		</div>
+		<div>
+			<label>Company Name</label>
+			<input type="text" name="name" ng-model="ctrl.listing.name">
+		</div>
+		<div>
+			<label>Website Url  http://</label>
+			<input type="text" name="url" ng-model="ctrl.listing.url">
+		</div>
+		<div>
+			<label>Email Address</label>
+			<input type="text" name="email" ng-model="ctrl.listing.email">
+		</div>
+		<div>
+			<label>Phone Number  (optional)</label>
+			<input type="text" name="phone" ng-model="ctrl.listing.phone">
+		</div>
+		<div>
+			<label>Country</label>
+			<select ng-options="option.value as option.label for option in ctrl.listing.countries" ng-model="ctrl.country" name="country">
+			</select>
+		</div>
+<!-- 		<div>
+			<label>State</label>
+			<select ng-options="option.value as option.label for option in ctrl.states" ng-model="ctrl.state" name="state" required>
+			</select>
+		</div> -->
+		<div>
+			<label>City</label>
+			<select ng-options="option.value as option.label for option in ctrl.listing.cities" ng-model="ctrl.city" name="city">
+			</select>
+		</div>
+		<div>
+			<label>Address (for Google Maps)</label>
+			<input type="text" name="address" ng-model="ctrl.listing.address">
+		</div>
+<!-- 		<div>
+			<label>Free Option?</label>
+			<select ng-options="option.value as option.label for option in ctrl.categories1" ng-model="ctrl.category1" name="category1">
+			</select>
+		</div> -->
+		<div>
+			<label>Category</label>
+			<select ng-options="option.value as option.label for option in ctrl.listing.categories" ng-model="ctrl.category" name="category">
+			</select>
+		</div>
+<!-- 		<div>
+		  <button type="file" ngf-select="uploadFiles($file, $invalidFiles)"
+          	accept="image/*" ngf-max-height="1000" ngf-max-size="1MB">
+      		Select File</button>
+  			<br><br>
+  			File:
+		  	<div style="font:smaller">{{f.name}} {{errFile.name}} {{errFile.$error}} {{errFile.$errorParam}}
+		     	 <span class="progress" ng-show="f.progress >= 0">
+		       	   	<div style="width:{{f.progress}}%"  
+		            	ng-bind="f.progress + '%'"></div>
+		      	</span>
+  			</div>     
+  			{{errorMsg}}
+		</div> -->
+		<div>
+			<label>Description</label>
+			<textarea type="text" name="name" ng-model="ctrl.listing.description"></textarea>
+		</div>
+		<div>
+			<label>Associated User</label>
+			<input type="text" name="user_id" ng-model="ctrl.listing.user_id">
+		</div>
+		<div>
+			<label>Live</label>
+			<input type="text" name="live" ng-model="ctrl.listing.live">
+		</div>
+		<div>
+			<label>Approved</label>
+			<input type="text" name="approved" ng-model="ctrl.listing.approved">
+		</div>
+		<div>
+			<label>CreatedAt</label>
+			<input type="text" name="createdAt" ng-model="ctrl.listing.createdAt">
+		</div>
+		<div>
+			<label>UpdatedAt</label>
+			<input type="text" name="updatedAt" ng-model="ctrl.listing.updatedAt">
+		</div>
+		<div>
+			<button type="submit" ng-click="ctrl.editListing()">{{ctrl.listing_edit_btn}}</button>
+			<button type="submit" ng-click="ctrl.deleteListing(ctrl.listing.id)">{{ctrl.listing_delete_btn}}</button>
+			<button type="button" ui-sref="dashboard">Cancel</button>
+		</div>
+	</form>
+</article>
