@@ -1,6 +1,8 @@
 var express 	= require('express');
 var models	 	= require('./models');
 var bodyParser  = require('body-parser');
+var authentication = require("./middleware/auth");
+var nodemailer	= require('nodemailer');
 var app 		= express();
 
 try{
@@ -17,14 +19,19 @@ app.use(express.static(__dirname + './../app/'));
 
 //route config
 var listing_routes = require('./routes/listing');
+var auth_routes = require('./routes/auth');
+var user_routes = require('./routes/users');
+var contact_routes = require('./routes/contact');
 
 //route set
 app.use('/api/listing',listing_routes);
-// app.use('/api/user', user_routes);
-// app.use('/api/admin', admin_routes);
+app.use('/api/auth',auth_routes);
+app.use('/api/users', user_routes);
+app.use('/api/contact', contact_routes);
 
 
-// create dummy data
+
+// create hardcoded data
 // var listing = {
 // 	name: "listing",
 //     url: "url",
@@ -40,9 +47,9 @@ app.use('/api/listing',listing_routes);
 // 	console.log('listing created!: ' + listings);
 // });
 
-models.Listing.findAll().then(function(listings){
-	console.log(listings);
-});
+// models.Listing.findAll().then(function(listings){
+// 	console.log(listings);
+// });
 
 
 //start server and database

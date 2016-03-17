@@ -70,7 +70,7 @@ function ListingsService($state,api){
 				// this.listings[index].state 				= listing.state;
 				this.listings[index].city 				= listing.city;
 				this.listings[index].address 			= listing.address;
-				// this.listings[index].category1 			= listing.category1;
+				this.listings[index].free				= listing.free;
 				this.listings[index].category 			= listing.category;
 				// this.listings[index].imagename 			= listing.imagename;
 				// this.listings[index].image 				= listing.image;

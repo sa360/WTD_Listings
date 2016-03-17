@@ -1,0 +1,23 @@
+<div ui-view="nav"></div>
+
+
+<div class="content">
+<h1>
+	Listing Details
+</h1>
+
+<article class="items detail-front">
+
+	<table>
+    <tr><th width="20%">Name:</th><td><b>{{ctrl.listing.name}}</b></td></tr>
+    <tr><th>Website:</th><td>{{ctrl.listing.url}}</td></tr>
+    <tr><th>Email:</th><td>{{ctrl.listing.email}}</td></tr>
+    <tr><th>Phone:</th><td>{{ctrl.listing.phone}}</td></tr>
+    <tr><th>Category:</th><td>{{ctrl.listing.category}}</td></tr>
+     <tr><th>Free walks available?</th><td>{{ctrl.listing.free}}</td></tr>
+    <tr><th style="vertical-align:top">Description:</th><td>{{ctrl.listing.description}}</td></tr>
+    <tr><td colspan="0"><button type="button" ui-sref="listings" class="btn btn-primary">Back</button></td></tr>
+    </table>
+
+</article>
+</div>

@@ -1,37 +1,25 @@
 app.controller('ListingCtrl',ListingCtrl);
 
-function ListingCtrl($http, $location, $stateParams, api, listingsSrv){
+function ListingCtrl($http, $location, $stateParams, api, listingsSrv, optionsSrv,UsersSrv){
 	var ctrl = this;
 	ctrl.listingsSrv = listingsSrv;
+	ctrl.optionsSrv = optionsSrv;
 	ctrl.$location = $location;
 	ctrl.$http = $http;
+	ctrl.UsersSrv = UsersSrv;
 
 	ctrl.listing = {};
 	ctrl.listing_edit_btn = 'Save Changes';
 	ctrl.listing_delete_btn = 'Delete Listing';
+	// ctrl.free= 'No';
 
-	ctrl.countries = [
-		{label:'Canada',value:'Canada'},
-		{label:'England',value:'England'},
-		{label:'France',value:'France'},
-		{label:'United States',value:'United States'},
-	];
+	ctrl.countries = ctrl.optionsSrv.countries;
+	ctrl.cities = ctrl.optionsSrv.cities;
+	ctrl.categories = ctrl.optionsSrv.categories;
 
-	ctrl.cities = [
-		{label:'Toronto',value:'Toronto'},
-		{label:'Ottawa',value:'Ottawa'},
-		{label:'Quebec',value:'Quebec'},
-		{label:'Montreal',value:'Montreal'},
-		{label:'Vancouver',value:'Vancouver'},
-	];
-
-	ctrl.categories = [
-		{label:'Nature', value:'Nature'},
-		{label:'Architecture', value:'Architecture'},
-		{label:'History', value:'History'},
-		{label:'Food', value:'Food'},
-
-	];
+	ctrl.user = UsersSrv.returnUser();
+	console.log('USER IN LISTINGS CTRL');
+	console.log(ctrl.user);
 
 
 	if($stateParams.listingId != undefined){
@@ -40,24 +28,24 @@ function ListingCtrl($http, $location, $stateParams, api, listingsSrv){
 			console.log(res);
 			ctrl.listing = res.data;
 
-			for(var option in ctrl.countries){
-				if(ctrl.listing.country == ctrl.countries[country].value){
-					ctrl.country = ctrl.countries[country];
+			for(var index in ctrl.countries){
+				if(ctrl.listing.country == ctrl.countries[index].value){
+					ctrl.country = ctrl.countries[index];
 				}
 			}
-			for(var option in ctrl.cities){
-				if(ctrl.listing.city == ctrl.cities[city].value){
-					ctrl.city = ctrl.cities[city];
+			for(var index in ctrl.cities){
+				if(ctrl.listing.city == ctrl.cities[index].value){
+					ctrl.city = ctrl.cities[index];
 				}
 			}
-			for(var option in ctrl.categories){
-				if(ctrl.listing.category == ctrl.categories[category].value){
-					ctrl.category = ctrl.categories[category];
+			for(var index in ctrl.categories){
+				if(ctrl.listing.category == ctrl.categories[index].value){
+					ctrl.category = ctrl.categories[index];
 				}
 			}
+			
 		})
 	};
-
 
 
 	ctrl.getListing = function(){
@@ -68,7 +56,7 @@ function ListingCtrl($http, $location, $stateParams, api, listingsSrv){
 		});
 	};
 
-	ctrl.addListing = function(){
+	ctrl.addListing = function(isValid){
 		var listing = {
 		    name				: ctrl.name,
 		    url					: ctrl.url,
@@ -78,24 +66,43 @@ function ListingCtrl($http, $location, $stateParams, api, listingsSrv){
 		    // state				: ctrl.state,
 		    city				: ctrl.city,
 		    address				: ctrl.address,
-		    // category1			: ctrl.category1,
+		    free				: ctrl.free,
 		    category			: ctrl.category,
 		    // imagename			: ctrl.imagename,
 		    // image 				: ctrl.image,
 		    description			: ctrl.description,
-		    user_id				: ctrl.user_id,
+		    user_id				: ctrl.user.id,
 		    live				: true,
 		    approved			: true
 		}
 		// console.log(listing);
-		ctrl.listingsSrv.addListing(listing);
-
+		if (isValid){
+			ctrl.listingsSrv.addListing(listing);
+		}
 	};
 
 
 	ctrl.editListing = function(id){
 		// ctrl.listing_update_btn = "Updating";
-		ctrl.listingsSrv.editListing(ctrl.listing, ctrl.listing.id)
+		var listing = {
+		    name				: ctrl.listing.name,
+		    url					: ctrl.listing.url,
+		    email				: ctrl.listing.email,
+		    phone				: ctrl.listing.phone,
+		    country				: ctrl.country.value,
+		    // state				: ctrl.state,
+		    city				: ctrl.city.value,
+		    address				: ctrl.listing.address,
+		    free				: ctrl.listing.free,
+		    category			: ctrl.category.value,
+		    // imagename			: ctrl.imagename,
+		    // image 				: ctrl.image,
+		    description			: ctrl.listing.description,
+		    user_id				: ctrl.user.id,
+		    live				: true,
+		    approved			: true
+		}
+		ctrl.listingsSrv.editListing(listing, ctrl.listing.id)
 		.then(function(res){
 			ctrl.$location.path('/dashboard');
 		});

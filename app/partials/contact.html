@@ -1,18 +1,46 @@
+<div ui-view="nav"></div>
 
+<div class="content">
+	<h1>Contact</h1>
+	<div class="items-contact">
+		<div>
+			<table class="socialcontact">
+				<tr><th><h2>Get in Touch with Us!</h2></th></tr>
+				<tr>					
+					<td width="50%"><a href="http://www.facebook.com/walkingtourdirectory"><i class="fa fa-facebook fa-3x"></i></a></td>
+					<td width="50%"><a href="http://twitter.com/WalkingTourDir"><i class="fa fa-twitter fa-3x"></i></a></td>
+				</tr>
+				<tr></tr>
+				<tr><th>General inquiries:</th><td>contact[at]walkingtourdirectory[dot]com</td></tr>
+				<tr><th>Directory listing questions:</th><td>listing[at]walkingtourdirectory[dot]com</td></tr>
+			</table>
+		</div>
 
-<h2>Contact</h2>
+		<div><hr><hr>
+		</div>
 
-<table>
-	<tr>
-		<td>General inquiries:</td>				
-		<td>contact[at]walkingtourdirectory[dot]com</td>
-	</tr>
-	<tr>
-		<td>Directory listing questions:</td>	
-		<td>listing[at]walkingtourdirectory[dot]com</td>
-	</tr>
-	<tr>
-		<td>Find us on Facebook:</td>	
-		<td>http://www.facebook.com/walkingtourdirectory</td>
-	</tr>
-</table>
+<!-- 		<div>
+			<h2>Send Us a Message:</h2>
+			<article class="contact-frm">
+				<form name="contact" ng-submit="ctrl.contact()">
+
+					<div class="form-group">
+						<label for="contact_name">Your Name</label>
+						<input type="text" class="form-control" name="contact_name" ng-model="ctrl.contact_name" required>
+					</div>
+					<div class="form-group">
+						<label for="contact_email">Email Address</label>
+						<input type="text" class="form-control" name="contact_email" ng-model="ctrl.contact_email" required>
+					</div>
+					<div class="form-group">
+						<label for="contact_message">Your Message</label>
+						<textarea type="text" class="form-control" name="contact_message" ng-model="ctrl.contact_message" required></textarea>
+					</div>
+					<div>
+						<button type="submit" class="btn btn-primary" ng-click="ctrl.contact()">Send</button>
+					</div>
+				</form>
+			</article>
+		</div> -->
+	</div>
+</div>

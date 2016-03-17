@@ -1,62 +1,68 @@
-
-
+<div ui-view="nav2"></div>
+<div class="content">
 <h3>
 	Edit Existing Listing
 </h3>
 
 <article class="listing-frm">
-	<form name="edit-listing" ng-submit="ctrl.editListing()">
+	<form name="edit-listing" ng-submit="ctrl.editListing()" role="form" data-toggle="validator">
 
-		<div>
-			<label>Listing ID</label>
-			<input type="text" name="id" ng-model="ctrl.listing.id">
+		<div class="form-group">
+			<label for="id" class="control-label">Listing ID</label>
+			<input type="text" class="form-control" name="id" ng-model="ctrl.listing.id" readonly>
 		</div>
-		<div>
-			<label>Company Name</label>
-			<input type="text" name="name" ng-model="ctrl.listing.name">
+
+
+		<div class="form-group has-feedback">
+			<label for="name">Company Name</label>
+			<input type="text" class="form-control" name="name" ng-model="ctrl.listing.name" ng-minlength="2" ng-maxlength="50" required>
+			<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+    		<div class="help-block with-errors">Hey look, this one has feedback icons!  Must be between 2 - 50 characters.</div>
 		</div>
-		<div>
-			<label>Website Url  http://</label>
-			<input type="text" name="url" ng-model="ctrl.listing.url">
+
+
+		<div class="form-group">
+			<label for="url">Website Url  http://</label>
+			<input type="text" class="form-control" name="url" ng-model="ctrl.listing.url">
 		</div>
-		<div>
-			<label>Email Address</label>
-			<input type="text" name="email" ng-model="ctrl.listing.email">
+		<div class="form-group">
+			<label for="email">Email Address</label>
+			<input type="text" class="form-control" name="email" ng-model="ctrl.listing.email">
 		</div>
-		<div>
-			<label>Phone Number  (optional)</label>
-			<input type="text" name="phone" ng-model="ctrl.listing.phone">
+		<div class="form-group">
+			<label for="phone">Phone Number  (optional)</label>
+			<input type="text" class="form-control" name="phone" ng-model="ctrl.listing.phone">
 		</div>
-		<div>
-			<label>Country</label>
-			<select ng-options="option.value as option.label for option in ctrl.listing.countries" ng-model="ctrl.country" name="country">
+		<div class="form-group">
+			<label for="country">Country</label>
+			<select ng-options="option as option.label for option in ctrl.countries" class="form-control" ng-model="ctrl.country" name="country">
 			</select>
 		</div>
-<!-- 		<div>
-			<label>State</label>
-			<select ng-options="option.value as option.label for option in ctrl.states" ng-model="ctrl.state" name="state" required>
-			</select>
-		</div> -->
-		<div>
-			<label>City</label>
-			<select ng-options="option.value as option.label for option in ctrl.listing.cities" ng-model="ctrl.city" name="city">
-			</select>
-		</div>
-		<div>
-			<label>Address (for Google Maps)</label>
-			<input type="text" name="address" ng-model="ctrl.listing.address">
-		</div>
-<!-- 		<div>
-			<label>Free Option?</label>
-			<select ng-options="option.value as option.label for option in ctrl.categories1" ng-model="ctrl.category1" name="category1">
+<!-- 		<div class="form-group">
+			<label for="state">State</label>
+			<select ng-options="option.value as option.label for option in ctrl.states" class="form-control" ng-model="ctrl.state" name="state" required>
 			</select>
 		</div> -->
-		<div>
-			<label>Category</label>
-			<select ng-options="option.value as option.label for option in ctrl.listing.categories" ng-model="ctrl.category" name="category">
+		<div class="form-group">
+			<label for="city">City</label>
+			<select ng-options="option as option.label for option in ctrl.cities|filter:{country:ctrl.country.value}" class="form-control" ng-model="ctrl.city" name="city">
 			</select>
 		</div>
-<!-- 		<div>
+		<div class="form-group">
+			<label for="address">Address</label>
+			<input type="text" class="form-control" name="address" ng-model="ctrl.listing.address">
+		</div>
+		<div class= "form-group">
+			<label for="free">Free option available?</label>
+			<input type="checkbox" ng-model="ctrl.listing.free" name="free">
+			Yes
+		</div>
+		<div class="form-group">
+			<label for="category">Category</label>
+			<select ng-options="option as option.label for option in ctrl.categories" class="form-control" ng-model="ctrl.category" name="category">
+			</select>
+		</div>
+<!-- 		<div class="form-group">
 		  <button type="file" ngf-select="uploadFiles($file, $invalidFiles)"
           	accept="image/*" ngf-max-height="1000" ngf-max-size="1MB">
       		Select File</button>
@@ -70,34 +76,35 @@
   			</div>     
   			{{errorMsg}}
 		</div> -->
-		<div>
-			<label>Description</label>
-			<textarea type="text" name="name" ng-model="ctrl.listing.description"></textarea>
+		<div class="form-group">
+			<label for="description">Description</label>
+			<textarea type="text" class="form-control" name="description" ng-model="ctrl.listing.description"></textarea>
+		</div>
+		<div class="form-group">
+			<label for="user_id">Associated User</label>
+			<input type="text" class="form-control" name="user_id" ng-model="ctrl.listing.user_id">
+		</div>
+		<div class="form-group">
+			<label for="live">Live</label>
+			<input type="text" class="form-control" name="live" ng-model="ctrl.listing.live">
+		</div>
+		<div class="form-group">
+			<label for="approved">Approved</label>
+			<input type="text" class="form-control" name="approved" ng-model="ctrl.listing.approved">
+		</div>
+		<div class="form-group">
+			<label for="createdAt">CreatedAt</label>
+			<input type="text" class="form-control" name="createdAt" ng-model="ctrl.listing.createdAt" readonly>
+		</div>
+		<div class="form-group">
+			<label for="updatedAt">UpdatedAt</label>
+			<input type="text" class="form-control" name="updatedAt" ng-model="ctrl.listing.updatedAt" readonly>
 		</div>
 		<div>
-			<label>Associated User</label>
-			<input type="text" name="user_id" ng-model="ctrl.listing.user_id">
-		</div>
-		<div>
-			<label>Live</label>
-			<input type="text" name="live" ng-model="ctrl.listing.live">
-		</div>
-		<div>
-			<label>Approved</label>
-			<input type="text" name="approved" ng-model="ctrl.listing.approved">
-		</div>
-		<div>
-			<label>CreatedAt</label>
-			<input type="text" name="createdAt" ng-model="ctrl.listing.createdAt">
-		</div>
-		<div>
-			<label>UpdatedAt</label>
-			<input type="text" name="updatedAt" ng-model="ctrl.listing.updatedAt">
-		</div>
-		<div>
-			<button type="submit" ng-click="ctrl.editListing()">{{ctrl.listing_edit_btn}}</button>
-			<button type="submit" ng-click="ctrl.deleteListing(ctrl.listing.id)">{{ctrl.listing_delete_btn}}</button>
-			<button type="button" ui-sref="dashboard">Cancel</button>
+			<button type="submit" ng-click="ctrl.editListing()" class="btn btn-primary">{{ctrl.listing_edit_btn}}</button>
+			<button type="submit" ng-click="ctrl.deleteListing(ctrl.listing.id)" class="btn btn-primary" data-disable="true">{{ctrl.listing_delete_btn}}</button>
+			<button type="button" ui-sref="dashboard" class="btn btn-primary">Cancel</button>
 		</div>
 	</form>
 </article>
+</div>

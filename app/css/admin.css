@@ -1,0 +1,55 @@
+.admin-title{
+	width: 90%;
+	padding: 30px 15px 30px 15px;
+	margin: 0 auto;
+	border-width: 0px;
+	border-color: blue;
+	text-align: center;
+	background-color: blue;
+	color: white;
+}
+
+.bgadmin{
+	margin: 0px;
+	background-color: white;
+}
+
+.content{
+	width: 80%;
+	margin: 0 auto;
+	padding-top: 20px;
+}
+
+/*.centerbuttons{
+	margin: 0 auto;
+}*/
+
+/*.items{
+	margin: 10px solid blue;
+}*/
+
+.items p{
+	font-style: bold;
+	font-size: 16px;
+}
+
+.repeats-admin{
+	border-radius: 15px;
+	padding: 20px;
+	margin: 0px;
+	border-bottom: 1px solid grey;
+}
+.detail-admin{
+	padding: 20px;	
+}
+.form-inline{
+
+}
+.menu-admin{
+	margin: 0 auto;
+	color: black;	
+}
+.content h3{
+	color: black;
+	text-align: center;
+}

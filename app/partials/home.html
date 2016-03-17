@@ -1,11 +1,54 @@
+<div ui-view="nav"></div>
 
-<div>
-	<div><h3>Home Page</h3></div>
-	<div></div>
-</div>
+<div class = "content">
 
-<div>
-<div>ad</div>
-<div>recent listings</div>
-<div>ad</div>
+	<div class="jumbotron">
+	  <h1>Walk.  Learn.  Explore.</h1>
+	  <p>Search for free and paid walking tours around the world!</p>
+	  <br/><br/>
+	  <p><a class="btn btn-primary btn-lg" ui-sref="listings" role="button">Search the Directory</a></p>
+	</div>
+
+
+	<div class="row">
+		<div class="boxes">
+			<div class = "col-xs-12 col-sm-12 col-md-6 col-lg-6 col-md-push-3 col-lg-push-3 recent"><h3>Recently Added Listings</h3>
+				<div ng-repeat="listing in ctrl.listings       
+								| orderBy: ctrl.updatedAt:reverse 
+	      						| limitTo:ctrl.listingsPerPage:ctrl.curPage * ctrl.listingsPerPage">
+				    <table>
+				    	<tr><td><a ng-click="ctrl.goToDetail(listing.id)">{{listing.name}}</a></td></tr>
+				    </table>
+				</div>
+			</div>
+
+
+			<div class = "col-xs-12 col-sm-12 col-md-3 col-lg-3 col-md-pull-4 col-lg-pull-4 ad">ad1
+				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> 
+					<!-- WTD homepg squares GoogleAds-->
+					<ins class="adsbygoogle"
+				     style="display:block"
+				     data-ad-client="ca-pub-3205628599427310"
+				     data-ad-slot="1478315442"
+				     data-ad-format="auto"></ins>
+				<script>
+					(adsbygoogle = window.adsbygoogle || []).push({});
+				</script>
+			</div>
+
+
+			<div class = "col-xs-12 col-sm-12 col-md-3 col-lg-3 ad">ad2
+				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+					<!-- WTD homepg squares GoogleAds-->
+					<ins class="adsbygoogle"
+				     style="display:block"
+				     data-ad-client="ca-pub-3205628599427310"
+				     data-ad-slot="1478315442"
+				     data-ad-format="auto"></ins>
+				<script>
+					(adsbygoogle = window.adsbygoogle || []).push({});
+				</script>
+			</div>
+		</div>
+	</div>
 </div>

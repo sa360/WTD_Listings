@@ -1,8 +1,15 @@
 app.controller('ListingsCtrl',ListingsCtrl);
 
-function ListingsCtrl($http, $scope, api,listingsSrv, listings, $state){
+function ListingsCtrl($http, $scope, api,listingsSrv, listings, $state, optionsSrv){
 	var ctrl = this;
+
+	///////Restrict access could go here if not in app.js////
+	///////In this particular case, it would restrict both front&back since this controller controls both
+	// if(localStorage.authToken == undefined){
+	// 	$state.go('auth');
+	// }
 	ctrl.listingsSrv = listingsSrv;
+	ctrl.optionsSrv = optionsSrv;
 	ctrl.$http = $http;
 	ctrl.$state = $state;
 
@@ -14,11 +21,10 @@ function ListingsCtrl($http, $scope, api,listingsSrv, listings, $state){
 	ctrl.city = '';
 	ctrl.category = '';
 
-	// $scope.$watch(function(){
- //    	return listingsSrv.listings;
-	// }, function (newValue) {
-	//     ctrl.listings = listingsSrv.listings;
-	// });
+	ctrl.countries = ctrl.optionsSrv.countries;
+	ctrl.cities = ctrl.optionsSrv.cities;
+	ctrl.categories = ctrl.optionsSrv.categories;
+
 	console.log(ctrl.listings);
 
 	ctrl.getListings = function(){
@@ -33,5 +39,24 @@ function ListingsCtrl($http, $scope, api,listingsSrv, listings, $state){
 		ctrl.$state.go('adminedit',{listingId:id});
 		
 	};
+	ctrl.logout = function(){
+		localStorage.removeItem('authToken');
+		localStorage.removeItem('saveduser');
+		ctrl.$state.go('auth');
+	};
+
+	ctrl.goToDetail = function(id){
+
+		ctrl.$state.go('itemdetail',{listingId:id});
+		
+	};
+
+	ctrl.clearFilter = function(){
+		ctrl.search.$ = '';
+		filter: ctrl.country = "";
+		filter: ctrl.city = "";
+		filter: ctrl.category = "";
+	}
+
 
 };

@@ -45,7 +45,7 @@ router.put('/:listingId', function(request, response){
 		    // state				: __listing.state,
 		    city				: __listing.city,
 		    address				: __listing.address,
-		    // category1			: __listing.category1,
+		    free				: __listing.free,
 		    category			: __listing.category,
 		    // imagename			: __listing.imagename,
 		    // image 				: __listing.image,

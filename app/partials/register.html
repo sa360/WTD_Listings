@@ -1,0 +1,52 @@
+<div ui-view="nav3"></div>
+
+<section id="auth">
+  <div class="login-page">
+    <div id="main-content" class="auth main-content">
+      <div class="banner-wrapper registration-header">
+        <h1>Register</h1>
+      </div>
+      <div class="container-fluid">
+        <div class="login-wrapper">
+          <div class="login-form clearfix">
+
+            <form method="post" class="stacked-form" ng-submit="ctrl.register()">
+              <div class="row">
+                <div class="col-xs-12">
+                  <span class="field-validation-valid" data-valmsg-for="First Name" data-valmsg-replace="true"></span>
+                  <input class="form-input bs-input-box stacked-input-box" type="text" name="fname" placeholder="First Name" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" ng-model="ctrl.fname" />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12">
+                  <span class="field-validation-valid" data-valmsg-for="Last Name" data-valmsg-replace="true"></span>
+                  <input class="form-input bs-input-box stacked-input-box" type="text" name="lname" placeholder="Last Name" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" ng-model="ctrl.lname" />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12">
+                  <span class="field-validation-valid" data-valmsg-for="EmailAddress" data-valmsg-replace="true"></span>
+                  <input class="form-input bs-input-box stacked-input-box" type="email" name="email" value="" placeholder="Email Address" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" ng-model="ctrl.email" />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12">
+                  <span class="field-validation-valid" data-valmsg-for="Password" data-valmsg-replace="true"></span>
+                  <input class="form-input bs-input-box stacked-input-box" type="password" name="password" placeholder="Password" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" ng-model="ctrl.password" />
+                </div>
+
+                <div class="col-xs-12">
+                  <span class="field-validation-valid" data-valmsg-for="Re-type Password" data-valmsg-replace="true"></span>
+                  <input class="form-input bs-input-box stacked-input-box" type="password" name="password" placeholder="Password" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" ng-model="ctrl.repassword" />
+                </div>
+              </div>
+              <input type="submit" value="{{ctrl.register_btn}}" class="form-input btn btn-primary bs-form__button stacked-input-box" />
+              <button type="button" ui-sref="home" class="btn btn-primary">Cancel</button>
+            </form>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

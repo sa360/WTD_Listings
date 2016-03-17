@@ -3,7 +3,8 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- App Styles -->
-	<link rel="stylesheet" type="text/css" src="bower_components/bootstrap/dist/js/bootstrap.js">
+<!-- 	<link rel="stylesheet" type="text/css" src="bower_components/bootstrap/dist/js/bootstrap.js"> -->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
 	<link rel="stylesheet" type="text/css" href="css/front.css">
@@ -13,8 +14,10 @@
 
 	<script type="text/javascript" src="bower_components/angular/angular.js"></script>
 	<script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+	<script type="text/javascript" src="bower_components/angular-messages/angular-messages.js"></script>
 	<script type="text/javascript" src="bower_components/ng-file-upload-shim/ng-file-upload-shim.min.js"></script> <!-- for no html5 browsers support -->
 	<script type="text/javascript" src="bower_components/ng-file-upload/ng-file-upload.min.js"></script>
+	<script type="text/javascript" src="bower_components/angular-jwt/dist/angular-jwt.js"></script>
 
 	<!-- Vendor -->
 <!-- 	<script type="text/javascript" src="assets/js/modernizr.custom.js"></script>
@@ -22,11 +25,12 @@
 	<!-- App Controllers -->
 	<script type="text/javascript" src="app.js"></script>
 	<script type="text/javascript" src="js/controllers/front.ctrl.js"></script>
-	<script type="text/javascript" src="js/controllers/login.ctrl.js"></script>
+	<script type="text/javascript" src="js/controllers/auth.ctrl.js"></script>
 	<script type="text/javascript" src="js/controllers/listings.ctrl.js"></script>
 	<script type="text/javascript" src="js/controllers/listing.ctrl.js"></script>
 	<script type="text/javascript" src="js/controllers/item.ctrl.js"></script>
 	<script type="text/javascript" src="js/controllers/contact.ctrl.js"></script>
+	<script type="text/javascript" src="js/controllers/users.ctrl.js"></script>
 	<!-- V2 -->
 	<script type="text/javascript" src="js/controllers/user_add_listing.ctrl.js"></script>
 	<script type="text/javascript" src="js/controllers/approve.ctrl.js"></script>
@@ -35,11 +39,14 @@
 	<!-- App Services -->
 	<script type="text/javascript" src="js/services/api.srv.js"></script>
 	<script type="text/javascript" src="js/services/listings.srv.js"></script>
+	<script type="text/javascript" src="js/services/options.srv.js"></script>
+	<script type="text/javascript" src="js/services/users.srv.js"></script>
 	
 </head>
-<body ng-app="listingsApp">
-
-	<div ui-view class="wrapper"></div>
+<body ng-app="listingsApp" ng-class="$state.current.data.bodyClass">
+<!-- injected this so front and back end can have diff backgrounds
+ -->	
+ <div ui-view class="wrapper"></div>
 
 </body>
 </html>

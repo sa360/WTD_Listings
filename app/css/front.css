@@ -1,0 +1,141 @@
+.navbar{
+	background-color: #0059b3;
+	border: none;
+	width: 80%;
+	margin: 0 auto;
+	font-size: 18px;
+	border-radius: 50px;
+}
+.navbar-inverse .navbar-nav li a{
+	color: white;
+}
+.navbar-nav li:hover{
+	background-color: #0073e6;
+	border-radius: 50px;
+}
+.navbar-btn{
+	border-radius: 50px;
+}
+
+.front-title{
+	width: 80%;
+	margin: 0 auto;
+	border-radius: 15px;
+	text-align: center;
+	background-color: white;
+	color: black;
+}
+.front-title h1{
+	font-size: 50px;
+	margin-top: 0px;
+}
+
+.bgfront{
+	margin: 0px;
+	background-image: url("../img/urban-landscape-wallpaper-10-grafitti-tunnel.jpg");
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: auto|length|cover;
+    background-position: center;
+}
+
+.form-inline{
+
+}
+.menu-front{
+	margin: 0 auto;
+	color: white;	
+}
+
+.content{
+	width: 70%;
+	margin: 0 auto;
+
+
+}
+.content h1{
+	color: white;
+	text-align: center;
+}
+
+.items{
+	background-color: white;
+
+}
+
+.items p{
+	font-style: bold;
+	font-size: 16px;
+}
+
+.items-contact{
+	width: 60%;
+	margin: 0 auto;
+	background-color: white;
+}
+.items-contact button{
+	float: right;
+}
+
+.repeats-front{
+	border-radius: 15px;
+	padding: 20px;
+	margin-bottom: 20px;
+}
+.detail-front{
+	padding: 20px;
+	border-radius: 15px;
+}
+
+table tr{
+	margin-bottom:15px;
+}
+
+.ad{
+	height:200px;
+	background-color: white;
+	border-radius: 20px;
+	margin: 15px 0px;
+}
+
+.recent{
+	height:200px;
+	background-color: white;
+		height: auto;
+/*	padding-bottom: 20px;*/
+padding: 0px 20px 20px 20px;
+	border-radius: 20px;
+	margin: 15px 0px;
+}
+
+.socialcontact{
+	position: center;
+}
+.spacer{
+	padding: none;
+}
+
+.jumbotron{
+
+	background-image: url("../img/sidewalk-657906_960_720.jpg");
+	background-repeat: no-repeat;
+/*    background-attachment: fixed;*/
+    background-size: auto|length|cover;
+    background-position: center;
+    border-radius: 20px;
+    color: white;
+    width: 80%;
+    margin: 0 auto;
+}
+.jumbotron h1{
+	color: white;
+}
+.jumbotron p{
+	text-align: center;
+}
+.boxes{
+	margin-bottom: 20px;
+}
+.front_text{
+	padding: 35px;
+}

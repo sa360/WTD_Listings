@@ -1,0 +1,37 @@
+<div ui-view="nav3"></div>
+    <div class="centerform">
+<section id="auth">
+  <div class="login-page">
+
+    <div id="main-content" class="auth main-content" ng-submit="ctrl.authenticate()">
+
+      <div class="banner-wrapper registration-header">
+        <h1 class="auth">Log In</h1>
+      </div>
+      <div class="container-fluid">
+        <div class="login-wrapper">
+          <div class="login-form clearfix">
+            <form method="post" class="stacked-form">
+              <div class="row">
+                <div class="col-xs-12 col-lg-4">
+                  <span class="field-validation-valid" data-valmsg-for="EmailAddress" data-valmsg-replace="true"></span>
+                  <input class="form-input bs-input-box stacked-input-box" type="text" name="email" value="" placeholder="Email Address" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" ng-model="ctrl.email" />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12 col-lg-4">
+                  <span class="field-validation-valid" data-valmsg-for="Password" data-valmsg-replace="true"></span>
+                  <input class="form-input bs-input-box stacked-input-box" type="password" name="password" placeholder="Password" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" ng-model="ctrl.password" />
+                </div>
+              </div>
+              <input type="submit" value="{{ctrl.auth_btn}}" class="form-input btn btn-primary bs-form__button stacked-input-box"/>
+              <button type="button" ui-sref="home" class="btn btn-primary">Cancel</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+</div>

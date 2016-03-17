@@ -20,9 +20,6 @@ module.exports = {
       lname: {
         type: Sequelize.STRING
       },
-      listingids: {
-        type: Sequelize.ARRAY
-      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
