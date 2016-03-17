@@ -39,7 +39,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       user_id: {
-        type: Sequelize.NUMBER
+        type: Sequelize.INTEGER
       },
       live: {
         type: Sequelize.BOOLEAN
