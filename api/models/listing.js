@@ -9,7 +9,7 @@ module.exports = function(sequelize, DataTypes) {
     // state: DataTypes.STRING,
     city: DataTypes.STRING,
     address: DataTypes.STRING,
-    free: DataTypes.BOOLEAN,
+    // free: DataTypes.BOOLEAN,
     category: DataTypes.STRING,
     // imagename: DataTypes.STRING,
     // image: DataTypes.BYTEA,
