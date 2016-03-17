@@ -32,6 +32,9 @@ module.exports = {
       address: {
         type: Sequelize.STRING
       },
+      free: {
+        type: Sequelize.BOOLEAN
+      },
       description: {
         type: Sequelize.STRING
       },
