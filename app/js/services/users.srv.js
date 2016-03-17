@@ -26,12 +26,12 @@ function UsersService($state,api){
 	}
 	ctrl.getUsers = function(){
 		var _this = this;
-		return this.api.request('/user',{},'GET')
+		return this.api.request('/users',{},'GET')
 		.then(function(res){
 			//success promise
 			console.log(res);
 			_this.usersSrv = res.data.users;
-			return res.data;
+			return res.data.users;
 		},function(res){
 			//error promise
 			console.log(res);
@@ -39,7 +39,7 @@ function UsersService($state,api){
 		});
 	};
 
-	ctrl.getUsers = function(userId){
+	ctrl.getUser = function(userId){
 		return this.api.request('/user/'+userId,{},'GET');
 	};
 

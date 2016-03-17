@@ -1,17 +1,19 @@
 <div ui-view="nav2"></div>
 
-<div class="">
+<div class="content">
 
-<h1>Users</h1>
+	<h1>Users</h1>
 
- <div ng-repeat="user in ctrl.users">
-	<div class="">
-    <table>
-    <tr><th width="20%">Id:</th><td><b>{{user.id}}</b></td></tr>
-    <tr><th>First Name:</th><td><b>{{user.fname}}</b></td></tr>
-    <tr><th>Last Name:</th><td>{{user.lname}}</td></tr>
-    <tr><th>Email:</th><td>{{user.email}}</td></tr>
-    </table>
-    <hr>
+	 <div ng-repeat="user in ctrl.users">
+		<div class="">
+	    <table>
+	    <tr><th width="20%">Id:</th><td><b>{{user.id}}</b></td></tr>
+	    <tr><th>First Name:</th><td><b>{{user.fname}}</b></td></tr>
+	    <tr><th>Last Name:</th><td>{{user.lname}}</td></tr>
+	    <tr><th>Email:</th><td>{{user.email}}</td></tr>
+	    <tr><th>Associated Listings:</th><td>{{user.listing_ids}}</td></tr>
+	    </table>
+	    <hr>
+		</div>
 	</div>
 </div>

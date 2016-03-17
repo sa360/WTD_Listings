@@ -1,27 +1,27 @@
 app.controller('UsersCtrl',UsersCtrl);
 
-function UsersCtrl($http, $location, $stateParams, api, users){
+function UsersCtrl($http, $location, $stateParams, api, UsersSrv, $state, users){
 	var ctrl = this;
 	ctrl.$http = $http;
 	ctrl.$state = $state;
 	ctrl.users = users;
+	ctrl.UsersSrv = UsersSrv;
 
 
 	ctrl.user_edit_btn = 'Edit user';
 	ctrl.user_delete_btn = 'Delete user';
 
-console.log('controller loaded');
+	console.log('controller loaded');
 
-// getUsers();
 
 	ctrl.getUsers = function(){
 		$http.get('/api/users')
 		.then(function(res){
 			console.log(res);
 		});
-	}
+	};
 
-		ctrl.editUser = function(id){
+	ctrl.editUser = function(id){
 		var user = {
 		    fname				: ctrl.users.fname,
 		    lname				: ctrl.users.lname,

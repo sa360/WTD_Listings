@@ -5,7 +5,7 @@
 </h3>
 
 <article class="listing-frm">
-	<form name="edit-listing" ng-submit="ctrl.editListing()" role="form" data-toggle="validator">
+	<form name="edit-listing" role="form" data-toggle="validator">
 
 		<div class="form-group">
 			<label for="id" class="control-label">Listing ID</label>
@@ -17,7 +17,7 @@
 			<label for="name">Company Name</label>
 			<input type="text" class="form-control" name="name" ng-model="ctrl.listing.name" ng-minlength="2" ng-maxlength="50" required>
 			<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-    		<div class="help-block with-errors">Hey look, this one has feedback icons!  Must be between 2 - 50 characters.</div>
+<!--     		<div class="help-block with-errors">Hey look, this one has feedback icons!  Must be between 2 - 50 characters.</div> -->
 		</div>
 
 

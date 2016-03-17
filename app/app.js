@@ -221,9 +221,14 @@ app.config(function($stateProvider, $httpProvider, $urlRouterProvider){
 								$state.go('auth');
 							}
 						},
-				},
+						users: function(UsersSrv) {
+							if(localStorage.authToken != undefined){
+								return UsersSrv.getUsers();
+							}
+						}
+				}
 			},
-			'nav3@register':{ templateUrl: 'partials/topbar_admin.html'}
+			'nav2@adminusers':{ templateUrl: 'partials/topbar_admin.html'}
 		},
 		data: {
         	bodyClass: 'bgadmin'

@@ -57,6 +57,8 @@ function ListingCtrl($http, $location, $stateParams, api, listingsSrv, optionsSr
 	};
 
 	ctrl.addListing = function(isValid){
+		console.log('hello');
+		console.log(isValid);
 		var listing = {
 		    name				: ctrl.name,
 		    url					: ctrl.url,
@@ -83,6 +85,7 @@ function ListingCtrl($http, $location, $stateParams, api, listingsSrv, optionsSr
 
 
 	ctrl.editListing = function(id){
+
 		// ctrl.listing_update_btn = "Updating";
 		var listing = {
 		    name				: ctrl.listing.name,
