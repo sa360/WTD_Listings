@@ -1,3 +1,4 @@
 node_modules/
 bower_components/
 api/config/env_dev.js
+app/js/services/api.srv.js
