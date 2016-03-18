@@ -1,18 +1,20 @@
-.centerform{
+.ng-scope .centerform{
+
 	margin: 0 auto;
+	background-color: white;
 
-}
-.centerform h1{
-	color: white;
-}
-
-#main-content{
-	margin: 0 auto;
-
-}
-#main-content h1{
-	color: white;
 }
 .auth{
 	color: white;
+		text-align: center;
+}
+
+
+.centerform .form-control{
+		width: 20%;
+}
+
+.login-page{
+	margin: 0 auto;
+			text-align: center;
 }

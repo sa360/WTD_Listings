@@ -5,7 +5,7 @@
 	border-width: 0px;
 	border-color: blue;
 	text-align: center;
-	background-color: blue;
+	background-color: #0080ff;
 	color: white;
 }
 
@@ -46,7 +46,7 @@
 
 }
 .menu-admin{
-	margin: 0 auto;
+	text-align: center;
 	color: black;	
 }
 .content h3{

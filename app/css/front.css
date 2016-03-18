@@ -1,5 +1,5 @@
 .navbar{
-	background-color: #0059b3;
+	background-color: #0080ff;
 	border: none;
 	width: 80%;
 	margin: 0 auto;
@@ -10,7 +10,7 @@
 	color: white;
 }
 .navbar-nav li:hover{
-	background-color: #0073e6;
+	background-color: #00bfff;
 	border-radius: 50px;
 }
 .navbar-btn{
@@ -60,6 +60,7 @@
 
 .items{
 	background-color: white;
+	height: 500px;
 
 }
 
@@ -69,12 +70,17 @@
 }
 
 .items-contact{
-	width: 60%;
 	margin: 0 auto;
-	background-color: white;
+
 }
-.items-contact button{
-	float: right;
+
+
+.itemsinside b{
+	color: #0080ff;
+}
+
+.itemsinside th{
+	width: 100px;
 }
 
 .repeats-front{
@@ -95,36 +101,34 @@ table tr{
 	height:200px;
 	background-color: white;
 	border-radius: 20px;
-	margin: 15px 0px;
+	margin-top: 20px;
 }
 
 .recent{
 	height:200px;
 	background-color: white;
-		height: auto;
-/*	padding-bottom: 20px;*/
-padding: 0px 20px 20px 20px;
+	height: auto;
+	padding: 0px 20px 20px 20px;
 	border-radius: 20px;
-	margin: 15px 0px;
+	margin-top: 20px;
+}
+.recent a{
+	color: #0080ff;
 }
 
 .socialcontact{
 	position: center;
-}
-.spacer{
-	padding: none;
 }
 
 .jumbotron{
 
 	background-image: url("../img/sidewalk-657906_960_720.jpg");
 	background-repeat: no-repeat;
-/*    background-attachment: fixed;*/
     background-size: auto|length|cover;
     background-position: center;
     border-radius: 20px;
     color: white;
-    width: 80%;
+    width: 85%;
     margin: 0 auto;
 }
 .jumbotron h1{
@@ -133,9 +137,16 @@ padding: 0px 20px 20px 20px;
 .jumbotron p{
 	text-align: center;
 }
-.boxes{
-	margin-bottom: 20px;
-}
+
 .front_text{
 	padding: 35px;
+	border-radius: 20px;
+}
+
+.menu-front{
+	    text-align: center;
+}
+
+.btn-primary{
+	background-color: #0080ff
 }

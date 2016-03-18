@@ -22,9 +22,9 @@
       <select ng-options="option.value as option.label for option in ctrl.categories" class="form-control" ng-model="ctrl.category" name="category">
       </select>
     </div>
-    <button type="button" ng-click="ctrl.clearFilter()" class="btn btn-primary btn-sm">Clear Filters</button>
   </form>
   <form class="form-inline">
+    <button type="button" ng-click="ctrl.clearFilter()" class="btn btn-primary">Clear Filters</button>
     <button type="button" ui-sref="adminadd" class="btn btn-primary">Add New Listing</button>
     <button ng-click="ctrl.logout()" class="btn btn-primary">Log Out</button>
   </div>
@@ -37,15 +37,18 @@
                                           | filter: ctrl.city
                                           | filter: ctrl.category">
 	<div class="items repeats-admin">
-		<p>Name: {{listing.name}}</p>
-		<p>Address: {{listing.address}}</p>
-    <p>Last Update: {{listing.updatedAt}}</p>
-    <p>Live: {{listing.live}}</p>
-    <p>Approved: {{listing.approved}}</p>
-		<p>Category: {{listing.category}}</p>
-		<button type="button" ng-click="ctrl.goToEdit(listing.id)" class="btn btn-primary">Edit Listing</button>
+    <div class="itemsinside">
+  		<p>Name: {{listing.name}}</p>
+  		<p>Address: {{listing.address}}</p>
+      <p>Last Update: {{listing.updatedAt}}</p>
+      <p>Live: {{listing.live}}</p>
+      <p>Approved: {{listing.approved}}</p>
+  		<p>Category: {{listing.category}}</p>
+      <p>Description: {{listing.description}}</p>
+  		<button type="button" ng-click="ctrl.goToEdit(listing.id)" class="btn btn-primary">Edit Listing</button>
 <!--     <hr> -->
 <!-- 		<button type="submit" ng-click="ctrl.deleteShop(shop.id)">{{ctrl.shop_delete_btn}}</button> -->
+    </div>
 	</div>
 </div>
 </div>

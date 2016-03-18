@@ -4,7 +4,7 @@
 <div class="content">
 <div class="row">
   <form class="form-inline">
-  <div class="menu-front">
+    <div class="menu-front">
 <!--     <button type="button" ui-sref="frontadd" class="btn btn-primary">Add New Listing</button> -->
 <!--   <button ng-click="ctrl.logout()" class="btn btn-primary">Log Out</button> -->
     <div class="form-group">
@@ -40,14 +40,18 @@
                                           | filter: ctrl.city
                                           | filter: ctrl.category">
 	<div class="items repeats-front">
-    <table>
-    <tr><th width="20%">Name:</th><td><b>{{listing.name}}</b></td></tr>
-    <tr><th>Website:</th><td>{{listing.url}}</td></tr>
-    <tr><th>Category:</th><td>{{listing.category}}</td></tr>
-    <tr><th style="vertical-align:top">Description:</th><td>{{listing.description}}</td></tr>
-    <tr><td colspan="0"><button type="button" ng-click="ctrl.goToDetail(listing.id)" class="btn btn-primary btn-sm">See Details</button></td></tr>
-    </table>
-<!--     <hr> -->
+    <div class="itemsinside">
+      <table>
+      <tr><th>Name:</th><td></td><td><b>{{listing.name}}</b></td></tr>
+      <tr><th>Website:</th><td></td><td>{{listing.url}}</td></tr>
+      <tr><th>Category:</th><td></td><td>{{listing.category}}</td></tr>
+      <tr><th style="vertical-align:top">Description:</th><td></td><td>{{listing.description}}</td></tr>
+      </table>
+      <div>
+        <button type="button" ng-click="ctrl.goToDetail(listing.id)" class="btn btn-primary"  style="float:right">See Details</button>
+      </div>
+  <!--     <hr> -->
+    </div>
 	</div>
 </div>
 </div>
