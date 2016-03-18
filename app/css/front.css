@@ -60,7 +60,7 @@
 
 .items{
 	background-color: white;
-	height: 500px;
+;
 
 }
 
@@ -71,7 +71,7 @@
 
 .items-contact{
 	margin: 0 auto;
-
+	height: 500px
 }
 
 
