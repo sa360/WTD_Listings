@@ -1,2 +1,2 @@
 # WTD_Listings
-Listings directory
+Walking Tour Directory, directory listings site.
